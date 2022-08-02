@@ -1,0 +1,26 @@
+{
+    "general": {
+        "hello": "¡Hola! Buenos dias",
+        "ok": "Ok",
+        "accept": "Acceptar",
+        "cancel": "Cancelar",
+        "english": "Inglés",
+        "spanish": "Español"
+    },
+    "navbar": {
+        "signIn": "Entrar",
+        "signUp": "Registrar-se",
+        "signOut": "Salir",
+        "email": "Email",
+        "password": "Contraseña",
+        "firstname": "Nombre",
+        "lastname": "Apellido"
+    },
+    "footer": {
+        "linkHome": "Pagina Inicial",
+        "linkPage1": "Pagina 1",
+        "linkPage2": "Pagina 2",
+        "linkPage3": "Pagina 3",
+        "langLabel": "Español"
+    }
+}

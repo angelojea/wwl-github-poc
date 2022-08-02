@@ -1,0 +1,50 @@
+{
+    "general": {
+        "hello": "Hello! Good morning.",
+        "ok": "Ok",
+        "accept": "Accept",
+        "cancel": "Cancel",
+        "english": "English",
+        "spanish": "Spanish"
+    },
+    "navbar": {
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "signOut": "Sign Out",
+        "email": "Email",
+        "password": "Password",
+        "firstname": "First Name",
+        "lastname": "Last Name"
+    },
+    "footer": {
+        "linkHome": "Home",
+        "linkLearningPaths": "Learning Paths",
+        "linkModules": "Modules",
+        "linkArticles": "Articles",
+        "langLabel": "English"
+    },
+    "home": {
+        "title": "Home"
+    },
+    "learning-paths": {
+        "title": "Learning Paths"
+    },
+    "learning-path": {
+        "title": "Learning Path"
+    },
+    "modules": {
+        "title": "Modules",
+        "paths-filter": "Learning Paths"
+    },
+    "module": {
+        "title": "Module"
+    },
+    "articles": {
+        "title": "Articles",
+        "paths-filter": "Learning Paths",
+        "modules-filter": "Modules"
+    },
+    "article": {
+        "title": "Article"
+    }
+}

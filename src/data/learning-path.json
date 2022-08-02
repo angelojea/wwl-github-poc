@@ -1,0 +1,65 @@
+[
+    {
+        "id": "6bd21f9c-d857-4f98-bdfb-06148bfe8cd1",
+        "name": "Get started with Microsoft data analytics",
+        "language": "en",
+        "order": 0,
+        "description": "<p>Businesses need data analysis more than ever. In this learning path, you will learn about the life and journey of a data analyst, the skills, tasks, and processes they go through in order to tell a story with data so trusted business decisions can be made. You will learn how the suite of Power BI tools and services are used by a data analyst to tell a compelling story through reports and dashboards, and the need for true BI in the enterprise.</p><p>This learning path can help you prepare for the Microsoft Certified: Data Analyst Associate certification.</p><p>This learning path helps prepare you for Exam PL-300: Microsoft Power BI Data Analyst.</p>",
+        "modules": [
+            "d3a99806-3316-44d7-8474-78e8b64280d5",
+            "d3b7b7ff-488c-4725-bdb5-d9dd93f1eff7"
+        ]
+    },
+    {
+        "id": "794406ff-a9fb-49f2-b516-c60c46c0b4f7",
+        "name": "Microsoft Azure Fundamentals: Describe core solutions and management tools on Azure",
+        "language": "en",
+        "order": 0,
+        "description": "<div class='learn-summary font-size-md content'><p>Core solutions encompass a wide array of tools and services from Microsoft Azure. In this learning path, you'll be introduced to many of these tools and services and will be asked to help choose the best one for a given business scenario.</p><p>By the end of this learning path, you'll be able to:</p><ul><li>Choose the correct Azure Artificial Intelligence service to address different kinds of business challenges.</li><li>Choose the best software development process tools and services for a given business scenario.</li><li>Choose the correct cloud monitoring service to address different kinds of business challenges.</li><li>Choose the correct Azure management tool to address different kinds of technical needs and challenges.</li><li>Choose the right serverless computing technology for your business scenario.</li><li>Choose the best Azure IoT service for a given business scenario.</li></ul>",
+        "modules": [
+            "adebff56-5c58-44ef-892a-2d6ab46df525",
+            "6dc85f46-45c8-48c4-83b5-b9e129179153",
+            "ad2fdeb4-db50-427e-9a3b-23d50bad5f60",
+            "539018fa-ef37-4d40-8f39-97c8c2262b09",
+            "b997c4b2-f4bf-45c1-8297-767ef41b6d4c",
+            "58a7ca1c-9256-4232-92cb-6bcb6caaa775"
+        ]
+    },
+    {
+        "id": "d119d157-a953-4f51-bc47-1d5b9da1e5e3",
+        "name": "Microsoft Azure Fundamentals: Describe core Azure services",
+        "language": "en",
+        "order": 0,
+        "description": "<div class='learn-summary font-size-md content'><p>After completing this learning path, you'll be able to:</p><ul><li>Understand the breadth of services available in Azure including compute, network, storage, and database</li><li>Identify virtualization services such as Azure Virtual Machines, Azure Container Instances, Azure Kubernetes Service, and Azure Virtual Desktop</li><li>Compare Azure's database services such as Azure Cosmos DB, Azure SQL, Azure Database for MySQL, Azure Database for PostgreSQL, and Azure's big data and analysis services</li><li>Examine Azure networking resources such as Virtual Networks, VPN Gateways, and Azure ExpressRoute</li><li>Summarize Azure storage services such Azure Blob Storage, Azure Disk Storage, and Azure File Storage</li></ul><p>Here are the learning paths in this series:</p>",
+        "modules": [
+            "954065ba-1932-4df3-8513-de01d43869e8",
+            "93792ec4-2cfa-4217-b03d-e4864dd7bc96",
+            "35ae95c5-7d03-4c57-8484-0180859c46cb",
+            "685bc1a6-c908-41fe-a7a4-3d2d8419247b"
+        ]
+    },
+    {
+        "id": "ba67a17c-8fc8-4dcd-b737-aedeb7f42bd3",
+        "name": "Microsoft Azure Fundamentals: Describe core Azure concepts",
+        "language": "en",
+        "order": 0,
+        "description": "<div class='learn-summary font-size-md content'><p>New to the cloud? Azure fundamentals is a six-part series that teaches you basic cloud concepts, provides a streamlined overview of many Azure services, and guides you with hands-on exercises to deploy your very first services for free.</p><p>After completing this learning path, you'll be able to:</p><ul><li>Understand the benefits of cloud computing in Azure and how it can save you time and money</li><li>Explain cloud concepts such as high availability, scalability, elasticity, agility, and disaster recovery</li><li>Describe core Azure architecture components such as subscriptions, management groups, resources and resource groups</li><li>Summarize geographic distribution concepts such as Azure regions, region pairs, and availability zones</li></ul>",
+        "modules": [
+            "154677ad-dc41-4267-aef7-0374eea644f8",
+            "9396f50b-c637-4e30-974f-c0c09934f16b",
+            "8824a08d-4726-4999-abc1-3105b83780c6"
+        ]
+    },
+    {
+        "id": "1ca7a620-95aa-4281-870b-6b70a03b640d",
+        "name": "Microsoft Azure Fundamentals: Describe cloud concepts",
+        "language": "en",
+        "order": 0,
+        "description": "This learning path helps prepare you for Exam AZ-900: Microsoft Azure Fundamentals.",
+        "modules": [
+            "be444915-c636-4cbc-b7f3-a91c83ea7c20",
+            "a296afa3-9004-4f6a-8c2e-72070406104a",
+            "3dc3a545-d330-4e78-bcda-6960f728d3be"
+        ]
+    }
+]
