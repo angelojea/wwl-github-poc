@@ -17,7 +17,7 @@ export function HomePage() {
         <div className={styles.home}>
             <Stack tokens={{childrenGap:20}}>
                 <Text><h1>{`${t('general.hello')}.`}</h1></Text>
-                <Text><p>This is an example of text that is not translated</p></Text>
+                <Text><p>This is an example of text that is not translated 👍</p></Text>
             </Stack>
         </div>
     )
