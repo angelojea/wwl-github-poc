@@ -29,6 +29,8 @@ export function LearningPathDetail() {
         if (loading) loadData();
     }, [loading]);
 
+    if (loading) return <Spinner />;
+    
     const learningPath = learningPaths.find(x => x.id === id);
 
     if (!learningPath) {
@@ -41,9 +43,6 @@ export function LearningPathDetail() {
     const navigate = (id: string) => () => navigateTo(formatRoute(Route.ModuleDetail, { id: id }) as Route);
 
     return (
-        loading ?
-        <Spinner />
-        :
         <Stack tokens={{ childrenGap: 20 }}>
             <Text><h1>{learningPath.name}</h1></Text>
             <Text>

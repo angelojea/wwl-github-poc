@@ -26,6 +26,8 @@ export function ArticleDetail() {
         if (loading) loadData();
     }, [loading]);
 
+    if (loading) return <Spinner />;
+
     const article = knowledgearticles.find(x => x.language === app.language && x.id === id);
 
     if (!article) {
@@ -34,9 +36,6 @@ export function ArticleDetail() {
     }
 
     return (
-        loading ?
-        <Spinner />
-        :
         <Stack tokens={{ childrenGap: 20 }}>
             <Text><h1>{article.title}</h1></Text>
             <Text>

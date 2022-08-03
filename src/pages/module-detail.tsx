@@ -29,6 +29,8 @@ export function ModuleDetail() {
         if (loading) loadData();
     }, [loading]);
 
+    if (loading) return <Spinner />;
+
     const module = modules.find(x => x.id === id);
 
     if (!module) {
@@ -41,9 +43,6 @@ export function ModuleDetail() {
     const navigate = (id: string) => () => navigateTo(formatRoute(Route.ArticleDetail, { id: id }) as Route);
 
     return (
-        loading ?
-        <Spinner />
-        :
         <Stack tokens={{ childrenGap: 20 }}>
             <Text><h1>{module.name}</h1></Text>
             <Text>
