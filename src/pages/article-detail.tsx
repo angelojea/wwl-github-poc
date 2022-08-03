@@ -6,7 +6,7 @@ import { AppContext } from "../app.context";
 import { Separator } from "../components";
 import { Route } from "../contants";
 import { KnowledgeArticle } from "../models";
-import { formatRoute, httpGet, navigateTo } from "../services";
+import { formatRoute, httpGet, navigateTo, notification, NotificationType } from "../services";
 
 export function ArticleDetail() {
     const app = useContext(AppContext);
@@ -32,6 +32,7 @@ export function ArticleDetail() {
 
     if (!article) {
         navigateTo(Route.Articles);
+        notification('Module not found!', NotificationType.Error);
         return null;
     }
 

@@ -6,7 +6,7 @@ import { AppContext } from "../app.context";
 import { Separator } from "../components";
 import { Route } from "../contants";
 import { LearningPath, Module } from "../models";
-import { formatRoute, httpGet, navigateTo } from "../services";
+import { formatRoute, httpGet, navigateTo, notification, NotificationType } from "../services";
 
 export function LearningPathDetail() {
     const app = useContext(AppContext);
@@ -35,6 +35,7 @@ export function LearningPathDetail() {
 
     if (!learningPath) {
         navigateTo(Route.LearningPaths);
+        notification('Learning Path not found!', NotificationType.Error);
         return null;
     }
     
