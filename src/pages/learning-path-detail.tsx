@@ -1,16 +1,33 @@
-import { Link, Stack, Text } from "@fluentui/react";
-import { useContext } from "react";
+import { Link, Spinner, Stack, Text } from "@fluentui/react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { AppContext } from "../app.context";
 import { Separator } from "../components";
 import { Route } from "../contants";
-import { modules, learningPaths } from "../data";
-import { formatRoute, navigateTo } from "../services";
+import { LearningPath, Module } from "../models";
+import { formatRoute, httpGet, navigateTo } from "../services";
 
 export function LearningPathDetail() {
     const app = useContext(AppContext);
     const { id } = useParams<{ id: string }>();
+    
+    const [loading, setLoading] = useState(true);
+    const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]);
+    const [modules, setModules] = useState<Module[]>([]);
+
+    useEffect(() => {
+        const loadData = async () => {
+            const responses = await Promise.all([
+                httpGet('./src/data/learning-path.json'),
+                httpGet('./src/data/module.json'),
+            ])
+            setLearningPaths(responses[0]);
+            setModules(responses[1]);
+            setLoading(false);
+        };
+        if (loading) loadData();
+    }, [loading]);
 
     const learningPath = learningPaths.find(x => x.id === id);
 
@@ -24,6 +41,9 @@ export function LearningPathDetail() {
     const navigate = (id: string) => () => navigateTo(formatRoute(Route.ModuleDetail, { id: id }) as Route);
 
     return (
+        loading ?
+        <Spinner />
+        :
         <Stack tokens={{ childrenGap: 20 }}>
             <Text><h1>{learningPath.name}</h1></Text>
             <Text>

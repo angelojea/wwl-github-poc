@@ -1,16 +1,37 @@
-import { DetailsList, Link, Stack, Text } from "@fluentui/react";
+import { DetailsList, Link, Spinner, Stack, Text } from "@fluentui/react";
 import { t } from "i18next";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import * as _ from 'lodash';
 
 import { AppContext } from "../app.context";
 import { Route } from "../contants";
-import { knowledgearticles, learningPaths, modules } from "../data";
-import { formatRoute, navigateTo, useStyles } from "../services";
+import { formatRoute, httpGet, navigateTo, useStyles } from "../services";
 import { Filter } from "../components";
+import { KnowledgeArticle, LearningPath, Module } from "../models";
 
 export function Articles() {
     const app = useContext(AppContext);
+    
+    const [loading, setLoading] = useState(true);
+    const [learningPaths, setLearningPaths] = useState<LearningPath[]>([]);
+    const [modules, setModules] = useState<Module[]>([]);
+    const [knowledgearticles, setKnowledgearticles] = useState<KnowledgeArticle[]>([]);
+
+    useEffect(() => {
+        const loadData = async () => {
+            const responses = await Promise.all([
+                httpGet('./src/data/learning-path.json'),
+                httpGet('./src/data/module.json'),
+                httpGet('./src/data/knowledge-article.json'),
+            ])
+            setLearningPaths(responses[0]);
+            setModules(responses[1]);
+            setKnowledgearticles(responses[2]);
+            setLoading(false);
+        };
+        if (loading) loadData();
+    }, [loading]);
+
     const [selectedModuleFilters, setSelectedModuleFilters] = useState<string[]>([]);
     const [selectedPathFilters, setSelectedPathFilters] = useState<string[]>([]);
 
@@ -49,6 +70,9 @@ export function Articles() {
     const navigateToPath = (id: string) => () => navigateTo(formatRoute(Route.LearningPathDetail, { id: id }) as Route);
 
     return (
+        loading ?
+        <Spinner />
+        :
         <Stack tokens={{ childrenGap: 20 }}>
             <div className="row">
                 <div className="col-3">

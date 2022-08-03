@@ -1,29 +1,49 @@
-import { Link, Stack, Text } from "@fluentui/react";
-import { useContext } from "react";
+import { Link, Spinner, Stack, Text } from "@fluentui/react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { AppContext } from "../app.context";
 import { Separator } from "../components";
 import { Route } from "../contants";
-import { modules as moduleData, knowledgearticles as articleData } from "../data";
-import { formatRoute, navigateTo } from "../services";
+import { KnowledgeArticle, LearningPath, Module } from "../models";
+import { formatRoute, httpGet, navigateTo } from "../services";
 
 export function ModuleDetail() {
     const app = useContext(AppContext);
     const { id } = useParams<{ id: string }>();
+    
+    const [loading, setLoading] = useState(true);
+    const [modules, setModules] = useState<Module[]>([]);
+    const [knowledgearticles, setKnowledgearticles] = useState<KnowledgeArticle[]>([]);
 
-    const module = moduleData.find(x => x.id === id);
+    useEffect(() => {
+        const loadData = async () => {
+            const responses = await Promise.all([
+                httpGet('./src/data/knowledge-article.json'),
+                httpGet('./src/data/module.json'),
+            ])
+            setKnowledgearticles(responses[0]);
+            setModules(responses[1]);
+            setLoading(false);
+        };
+        if (loading) loadData();
+    }, [loading]);
+
+    const module = modules.find(x => x.id === id);
 
     if (!module) {
         navigateTo(Route.Modules);
         return null;
     }
 
-    const articles = module["knowledge-articles"].map(articleId => articleData.find(x => x.id === articleId)).filter(x => x);
+    const articles = module["knowledge-articles"].map(articleId => knowledgearticles.find(x => x.id === articleId)).filter(x => x);
 
     const navigate = (id: string) => () => navigateTo(formatRoute(Route.ArticleDetail, { id: id }) as Route);
 
     return (
+        loading ?
+        <Spinner />
+        :
         <Stack tokens={{ childrenGap: 20 }}>
             <Text><h1>{module.name}</h1></Text>
             <Text>
